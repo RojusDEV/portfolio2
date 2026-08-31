@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --ground: #efece4;
+  --surface: #e5e1d7;
+  --ink: #1c1b18;
+  --accent: #1c7a63;
+  --eden: #145a4a;
+  --genoa: #1c7a63;
+  --pampas: #efece4;
+  color-scheme: light;
+  --border-primary: #9f9c96;
+  --gray-nurse: #f8f4f4;
+
+  --tundora: #444141;
+
+  --size-footer: font-size: clamp(1.75rem, calc(1.431rem + 1.307vw), 3rem);
+  --field: #e5e1d7;
+}
+
+.dark {
+  --ground: #0e1417;
+  --surface: #161e22;
+  --ink: #e6ebe8;
+  --accent: #5cc9a6;
+  color-scheme: dark;
+  --border-primary: #464c4d;
+
+  --eden: #8fd4bf;
+  --genoa: #5cc9a6;
+
+  --pampas: #0e1417;
+  --gray-nurse: hsla(144, 11%, 91%, 0.1);
+  --tundora: #e6ebe8;
+  --field: #161e22;
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --font-archivo: "Archivo", sans-serif;
+  --color-border: var(--border-primary);
+  --color-eden: var(--eden);
+  --color-genoa: var(--genoa);
+  --color-pampas: var(--pampas);
+
+  --color-field: var(--field);
+
+  --text-hero: clamp(2rem, 1.484rem + 2.116vw, 2.5rem);
+  --text-hero--line-height: 1;
+  --text-hero--letter-spacing: -0.02em;
+
+  --text-hero-lg: clamp(3.5625rem, 2.0625rem + 2.344vw, 4.875rem);
+  --text-hero-lg--line-height: 0.88;
+  --text-hero-lg--letter-spacing: -0.03em;
+
+  --color-gray-nurse: var(--gray-nurse);
+  --color-tundora: var(--tundora);
+
+  --text-footer: clamp(1.75rem, 1.431rem + 1.307vw, 3rem);
+  --text-footer--line-height: 1.1;
+  --text-footer--letter-spacing: -0.01em;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  *:not(dialog) {
+    margin: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
