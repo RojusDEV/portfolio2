@@ -75,7 +75,7 @@ const Hero = () => {
             </div>
             <div className="border-border grid border-b-2 pt-6 pb-4.5">
               <span className="text-ink/55 text-[0.6875rem] font-light tracking-wider">
-                CURRENTLY
+                PREVIOUSLY
               </span>
               <span className="text-ink text-lg">QA Intern, Edenred</span>
             </div>
