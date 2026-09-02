@@ -3,7 +3,6 @@ import driftlytics from "../assets/images/driftlytics.png";
 import losion from "../assets/images/losionMockup.png";
 import neapsikrauk from "../assets/images/neapsikrauk.png";
 import ebejus from "../assets/images/ebejus.png";
-import { useNavigate } from "react-router";
 const TECHNOLOGIES = [
   "All",
   "React",
@@ -28,7 +27,7 @@ const PROJECTS = [
       "TypeScript",
       "Docker",
     ],
-    demoLink: "",
+    demoLink: "https://github.com/RojusDEV/expense-detector",
     sourceCodeLink: "https://github.com/RojusDEV/expense-detector",
   },
   {
@@ -37,7 +36,7 @@ const PROJECTS = [
     description:
       "A minimal note-taking app with a distraction-free writing interface. Deployed and live on Vercel.",
     technologies: ["React", "Supabase", "TypeScript"],
-    demoLink: "",
+    demoLink: "https://losion.vercel.app/",
     sourceCodeLink: "https://github.com/RojusDEV/Notion_Clone",
   },
   {
@@ -46,7 +45,7 @@ const PROJECTS = [
     description:
       "Job listings near you: location-based search with smart filtering that keeps only the relevant results.",
     technologies: ["Node.js", "Express.js", "React"],
-    demoLink: "",
+    demoLink: "https://github.com/RojusDEV/neapsikrauk",
     sourceCodeLink: "https://github.com/RojusDEV/neapsikrauk",
   },
   {
@@ -55,14 +54,16 @@ const PROJECTS = [
     description:
       "A marketplace clone with product listings and a Redux-driven cart, styled in SCSS and backed by Supabase.",
     technologies: ["React", "Supabase", "SCSS", "Redux"],
-    demoLink: "",
+    demoLink: "https://ebejus.vercel.app/",
     sourceCodeLink: "https://github.com/RojusDEV/EbayClone",
   },
 ];
 
 const Featured = () => {
   const [selectedTech, setSelectedTech] = useState("All");
-  const navigate = useNavigate();
+  const handleOpenInNewTab = (path: string) => {
+    window.open(path, "_blank", "noopener,noreferrer");
+  };
   return (
     <section
       className="font-archivo mx-auto max-w-7xl scroll-mt-[5vh] px-5 md:mt-15.75 md:px-10"
@@ -129,7 +130,7 @@ const Featured = () => {
             <div className="mt-4 grid gap-1 lg:mt-0">
               <button
                 className="group/btn text-pampas bg-genoa relative isolate cursor-pointer overflow-hidden px-3.5 py-2 text-start font-extrabold transition-colors duration-200"
-                onClick={() => navigate(p.demoLink)}
+                onClick={() => handleOpenInNewTab(p.demoLink)}
               >
                 <span className="bg-ink absolute inset-0 -z-10 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover/btn:scale-x-100" />
                 Live demo
@@ -137,7 +138,7 @@ const Featured = () => {
 
               <button
                 className="group/btn text-ink border-border hover:border-genoa relative isolate cursor-pointer overflow-hidden border-2 px-3.5 py-2 text-start font-extrabold transition-colors duration-200 hover:text-white"
-                onClick={() => navigate(p.sourceCodeLink)}
+                onClick={() => handleOpenInNewTab(p.sourceCodeLink)}
               >
                 <span className="bg-genoa absolute inset-0 -z-10 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover/btn:scale-x-100" />
                 View code
